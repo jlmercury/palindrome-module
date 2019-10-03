@@ -20,7 +20,13 @@ function Phrase(content) {
 
 	// Returns the letters in the content.
 	this.letters = function letters() {
-		return this.content;
+		for (i = 0; i < this.content.length; i++) {
+			let theLetters = [];
+			if ( this.content.charAt(i).match(/[a-zA-Z]/) ) {
+				theLetters.push(this.content.charAt(i));
+			}
+			return theLetters.join("");
+		};
 	}
 
 	// Returns true for a palindrome, false otherwise.
