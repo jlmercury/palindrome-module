@@ -19,14 +19,10 @@ function Phrase(content) {
 	}
 
 	// Returns the letters in the content.
+	// For example:
+	// 	new Phrase("Hello, world!").letters() === "Helloworld"
 	this.letters = function letters() {
-		let theLetters = [];
-		for (i = 0; i < this.content.length; i++) {
-			if ( this.content.charAt(i).match(/[a-zA-Z]/) ) {
-				theLetters.push(this.content.charAt(i));
-			}
-		}
-			return theLetters.join("");
+		return Array.from(this.content).filter( c => c.match(/[a-z]/i)).join("");  
 	}
 
 	// Returns true for a palindrome, false otherwise.
